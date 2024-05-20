@@ -1,0 +1,84 @@
+/* Sizes are used for stylizing various aspects of a file.
+    However, setting a font-size setting with an absolute pixel (px)
+    value removes the users options to set font size preferences. 
+    Because of this, we do not use 'px' settings for fonts anymore. */
+
+/* A pixel has an absolute size of 1/96 of an inch */
+
+/* Percentages reflect a fraction of the space an element would normally have.
+    The amount of space an element has is determined by it nearest parent element.
+    H1 elements are block elements, meaning they normally span the entire width of 
+    the parent. This can be manipulated using percentages. Changing a value based 
+    on percentage will keep the change consistent, regardless of size or number 
+    of pixels on a screen. */
+
+h1 {
+    border: 2px dashed red;
+    width: 50%;
+}
+
+/* Because of this, it's important to pay attention to what sizing you are using with
+    each element and their parent elements. */
+
+/* The 'rem' unit is a relative unit size that represents the root size of the element.
+    This is what is most commonly used for font sizing nowadays. It's important to remember
+    setting a font-size on the html element is not encouraged. Only use font-size for specific
+    elements and classes of a file. */
+
+/* By setting the font-size of paragraph elements (p) to '2rem', it doubles the size
+    of the font based on the root (html) element. Since html *normally* has a root size for 
+    paragraph fonts set to 16px, this will adjust the paragraph font to 32. */
+
+p {
+    font-size: 2rem;
+}
+
+/* An 'em' is a relative unit size that can be used for styling OUTSIDE of font-size.
+    It uses the size based on the font size of the element itself. Changes made to font
+    size of an element will also change the value of an 'em'. */
+
+/* Here we are setting the 'gray' class to have a font-size of 1.5rem. Which would be 24px
+    (16 x 1.5 = 24). The padding is set to 0.5em. This would make the padding 12px (24 x 0.5 =12) */
+.gray {
+    font-size: 1.5rem;
+    padding: 0.5em;
+}
+/* Note that the padding could have been changed above or below the font-size change and it would not
+    matter. It is still size based on the font of the element. */
+
+
+/* The 'ch' unit is a relative unit relating to the width of the number '0' of the elements font. 
+    This, essentially, means 1 character unit in width.*/
+
+/* Here we are setting the id element 'first' to have a maximum width of 40 characters (ch). Note that
+    words extending beyond the 40 character limit will move to the next line, leaving empty space. */
+#first {
+    width: 40ch;
+}
+
+/* A CSS Reset is when all the styling is removed from a file. This can be used to override the default 
+    stylings a file is given by a web browser. This does give full control of how a file will look to the 
+    developer, but it's important to take those stylings into consideration as well. The below code does a
+    CSS reset. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* The viewport width and height refer to the area visible to the user. These relative unit values can be
+    adjusted using the 'vw' for viewport width and 'vh' for viewport term. */
+
+#second {
+    background-color: skyblue;
+    width: 50vw;
+    height: 10vh;
+}
+/* In almost every case, it is recommended to use a percent value regarding width. In some cases, using the 
+    viewport height value can help. For example, if the body of your page does occupy the full height of a 
+    screen, but you would like it to. */
+main {
+    height: 100vh;
+    background-color: paleturquoise;
+}

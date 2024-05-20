@@ -1,76 +1,37 @@
-/* CSS stylings work on a casacading (read top to bottom) system, along with specificity.
-    the last change made to a styling that is of equal specificity will be the styling used. */
-
-/* There are many different types of selectors that can be used in CSS. Here is a 
-    breakdown of the most commonly used ones. */
-
-
-
-/*        Universal Selector       */
-/* Selects ALL items on the page. */
-/* Typically only ever used for CSS resets. */
-* {}
-
-
-
-/*         Element Selector       */
-/* Select these by simply writing the element type */
-
-/* Font settings aren't automatically inherited by certain elements.
-    A best practice is to have font settings putting into the html element tag, 
-    then have elements inherit those font settings */
-
 html {
     font-size: 22px;
-    font-family: Arial;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
-    
+/* The background tag allows you change the color (and other stylings) 
+    to the background. The 'color' tag refers to font color. Colors can
+    be set using color names, rgb, rgba, hsl, hsla, and hexadecimal. The 'rgb' tag uses 
+    three numberic values from 0-255.*/
+body {
+    line-height: 1.5;
+    background: papayawhip;
+    color: rgb(0,0,0);
 }
 
-main {
-
-}
-
-button, input, textarea, select {
-    font: inherit;
-}
-
-/* Selectors using the same styling can be grouped by separating them with a comma */
-h1, h2 {
-    color: blue;
-}
-
+/* The 'rgba' color palette has a fourth value for transparency.
+    This has a value from 0-1 where 0 is completely transparent
+    and 1 is fully opaque.*/
 p {
-    color: purple;
+    color: rgba(0,0,0,.5);
 }
 
-/* When multiple selectors are on the same line and not separated with a comma
-    it will modify only values that are for the second selector nested inside the first. */
-/* Here, only span elements that are inside of paragraph elements will be changed. */
-p span {
-    text-transform: uppercase;
-    background-color: gold;
+/* Hexadecimal starts with a '#' and uses 6, base 16 (0-9 then a-f) 
+    values to determine the color. Each color (RGB) is represented by
+    two of these values. Red being the first two, green being the middle
+    two, and blue is the last two. In this system 0 is still the absence
+    of color, and F is the full value. */
+span {
+    color: #123abc;
 }
-/* This, however, is better handled using class selectors */
 
-
-
-/*          Class Selector          */
-/* Class selectors start with a '.' */
-/* Classes can be used more than once throughout a project and are the most common type of selector used in CSS */
-.gray {
-    color: gray;
-}
-/* This makes the CSS file more reusable and updatable in the future. */
-
-
-
-/*            Id Selector             */
-/* Id selectors start with '#' */
-/* Id's should only exist once in a document (be unique) */
-/* Not typical to use id selectors inside of CSS */
-#second {
-    font-style: italic;
+/* If both values for each respective color match, this can be shorthanded 
+    with just 3 values for the color. Here is an example in using the 
+    'shorthandHex' class.*/
+.shorthandHex {
+    color: #0fa;
 }

@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 
+    
+    The Box Model is how a site displays objects. Each object has multiple layers. From
+    outermost to innermost, these layers are:
+        - Margin
+        - Border
+        - Padding
+        - Element 
+        
+*/
+
+.container {
+    font-size: 1.5rem;
+
+/* You can individually assign borders, margins and padding by directions */
+    border-top: 2px solid green;
+    border-right: 4px dotted blue;
+    border-bottom: 8px double red;
+    border-left: 4px dashed black;
+
+/* Alternatively, you could shorthand this by declaring the attribute and putting 
+    them in the line. The order of these go in is top, right, bottom, left. */
+    padding: 1.5em 1.5em 1.5em 1.5em;
+
+/* If you plan on having these all be the same values, you can simply use 1 value instead.*/
+    margin: 1.5em;
+
+/* Outlines are the outermost styling of an object. It is not part of the box model in that
+    it does not take up space. */
+    outline: 5px outset purple;
+
+/* We can push the outline outside of the box by offsetting it */
+    outline-offset: 5px;
+
+}
+
+/* Here is a way to manipulate a box to transform it into a circle. The way to do this is
+    by setting the 'width' and 'height' equal to each other, then setting the 'border-radius'
+    equal to half that value. In this example, the width and height are 100px, so the
+    border-radius needs to be 50px. */
+.circle {
+    margin: 3rem auto;
+    background-color: gold;
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    border-radius: 50px;
+    outline: 2px solid red;
+    outline-offset: 0.25rem;
+}

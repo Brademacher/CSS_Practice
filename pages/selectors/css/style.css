@@ -1,0 +1,55 @@
+/*        Universal Selector       */
+/* Select ALL items on the page. */
+/* Typically only ever used for CSS resets. */
+* {
+    font-family: monospace;
+}
+
+
+
+/*         Element Selector       */
+/* Select these by simply writing the element type */
+body{
+    font-size: 22px;
+}
+
+/* Selectors using the same styling can be grouped by separating them with a comma */
+h1, h2 {
+    color: blue;
+}
+
+
+p {
+    color: purple;
+}
+
+
+
+/* When multiple selectors are on the same line and not separated with a comma
+    it will modify only values that are for the second selector nested inside the first. */
+/* Here, only span elements that are inside of paragraph elements will be changed. */
+p span {
+    text-transform: uppercase;
+    background-color: gold;
+}
+/* This, however, is better handled using class selectors */
+
+
+
+/*          Class Selector          */
+/* Class selectors start with a '.' */
+/* Classes can be used more than once throughout a project and are the most common type of selector used in CSS */
+.gray {
+    color: gray;
+}
+/* This makes the CSS file more reusable and updatable in the future. */
+
+
+
+/*            Id Selector             */
+/* Id selectors start with '#' */
+/* Id's should only exist once in a document (be unique) */
+/* Not typical to use id selectors inside of CSS */
+#second {
+    font-style: italic;
+}

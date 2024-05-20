@@ -1,0 +1,47 @@
+/*
+
+Typography is the way that text is arranged and presented. 
+
+*/
+
+/* Here is an example of importing a font style from fonts.google.com */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  padding: 10%;
+  font-size: 2rem;
+}
+
+/* It's important to remember that font and text settings are inherited.
+    Unless changed, child elements will inherit the properties of their parent.
+    This does not apply to forms. Those need to be changed (if desired) separately. */
+
+input,
+button {
+  font: inherit;
+}
+
+/* Another thing to remember is that text and font are different. Font properties
+    control the appearance of the font itself. The size, font-family, style, etc
+    refer to font. Text properties control the rendering and decoration of text on
+    the screen. This could include the color, alignment, shadows, etc. */
+
+/* Line-height will set the height of line boxes. It will accepts units, including 
+    basic numbers. The standard height is around 1.2, but (especially when using 
+    small font-sizes) it is recommended to have line-height set to around 1.4. */
+
+p {
+  text-align: justify;
+  text-indent: 2em;
+  line-height: 1.4;
+
+  /* 
+
+    The 'font-family' will use the first font in the list if it available to the machine
+    displaying the page. If for some reason, the font is not installed, it will attempt
+    to use the second font on the list, and continue in this manner until all options are
+    looked through.
+
+*/
+  font-family: "Raleway", sans-serif;
+}

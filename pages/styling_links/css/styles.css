@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  padding: 10%;
+  font-size: 2rem;
+  font-family: "Raleway", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: hsl(219, 66%, 44%);
+}
+
+/* Changing the colors of a link is an example of changing a pseudo class. This
+    is also an example of changing something based on the state of the element.
+    In this case, the state would be whether or not the link has been visited. 
+    Below are examples of manipulating pseudo classes.*/
+
+
+/* It is VERY important to order pseudo classes in the correct order. Failure to 
+    do so could result in your code not working properly. The order below for 
+    hyperlinks ('a' tags) is correct. */
+a:visited {
+    color: hsl(32, 63%, 45%);
+}
+a:visited:hover {
+    color:  hsl(283, 63%, 45%);
+}
+a:hover, a:focus         {
+    color:hsl(224, 66%, 44%);
+    background: rgb(248, 236, 209);
+}
+a:active {
+    color: seagreen;
+}

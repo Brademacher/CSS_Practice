@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Raleway";
+    font-size: 1.5rem;
+    min-height: 200vh;
+}
+
+.outer-container {
+    border: 3px dashed #000;
+    width: 75vw;
+    height: 85vh;
+    margin: 40px auto;
+    position: relative;
+}
+.inner-container {
+    border: 2px solid #865;
+    width: 40vw;
+    height: 50vh;
+    margin: 200px auto;
+}
+.box {
+    width: 150px;
+    height: 150px;
+    color: #fff;
+    padding: 1rem;
+}
+
+
+/* Absolute positioned elements will position themselves in the top left corner of
+    the inner-most parent that has a 'relative' position. If no elements are 
+    positioned relatively, it will move to the top left page it is displayed on.
+    In this case, the 'outer-container' class has a position of 'relative', therefore
+    the absolute box is in the top left of the 'outer-container' div. The adjustments
+    to 'top' and 'left' in pixels change positiong from it's absolute positioning. */
+
+/* The 'z-index' property controls how elements are stacked on top of each other. Normally,
+    elements are stacked in the order they appear in the HTML code where the elements
+    appearing later are on top of the previous elements. Think of them like a stack of 
+    pancakes. Putting a fresh pancake on top of another one *hides* the old one. However,
+    changing the 'z-index' value is like grabbing a pancake and putting it at a specific
+    position in the stack. ***NOTE*** The z-index property only works on elements that 
+    do not have a static position. You may also use negative values to move elements below
+    others. */
+.absolute {
+    background-color: peru;
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    z-index: 1;
+}
+/* Absolute positioning can be used for when you want an element to be a part of the page
+    (say, for screen reading purposes) but do not want it visible to the user. This can 
+    be done by moving the element very far away from what would be seen by the user. For
+    example 'left: -10000px' */
+
+
+
+/* Relatively positioned elements will be ALWAYS have it's positioning relative to 
+    its parent. If changes to positioning are done using pixels, the positioning will
+    always be that distance away of from the top left corner, regardless of the changes
+    done to the parent element's size. */
+.relative {
+    background-color: red;
+    position: relative;
+    top: 100px;
+    left: 100px;
+}
+
+
+/* Fixed positioned elements will not move from its location on the viewport (even
+    if the user scroll down the page. Also, changes to positioning move the element
+    IN that direction, rather than AWAY it, like you see with absolute and relative. */
+.fixed {
+    background-color: seagreen;
+    position: fixed;
+    top: 100px;
+    left: 100px;
+}
+
+/* Sticky elements (when given a modified position) will start at it's location within 
+    the parent element, move until it meets the position given (by modifiers) relative
+    to the viewport, and hold it for as long as their parent element is within the 
+    viewport. As the parent element leaves the screen, the sticky element will start 
+    move and leave with it. Left and right properties can be used for when you have a
+    horizontal scroll bar.*/
+.sticky {
+    background-color: purple;
+    position: sticky;
+    top: 0;
+}
+
+/***********************************************************************************/
+
+/* The 'scroll-behavior' property allows control of how links on a single page application
+    transition to the location of the link. Here, 'scroll-behavior: smooth' will quickly
+    scroll through the page until that links destination is at the top of the viewport. This
+    is different than the standard behavior, where it jumps instantly to the requested spot. */
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    height: 100vh;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+header, footer {
+    color: white;
+    text-align: center;
+    height: 100px;
+
+}
+
+header {
+    position: sticky;
+    top: 0;
+    font-size: 5rem;
+}
+
+footer {
+    background-color: #000;
+    position: sticky;
+    bottom: 0;
+    font-size: 3rem;
+}
+
+a, a:visited {
+    color: white;
+}
+
+.social {
+    background-color: royalblue;
+    color: white;
+    font-size: inherit;
+    padding: 1rem;
+    position: fixed;
+    top: 30%;
+    left: 0;
+    z-index: 1;
+}

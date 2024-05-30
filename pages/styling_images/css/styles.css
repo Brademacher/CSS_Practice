@@ -1,12 +1,113 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
+
+
+/*  Begin Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+img {
+    display: block;
+}
+
+/* End Reset */
+
+
+/*   Utility Classes   */
+.nowrap {
+    white-space: nowrap;
+}
+
+.offscreen {
+    position: absolute;
+    left: -10000px;
+}
+
+/* End Utility Classes */
+
 body {
     font-family: "Raleway";
     min-height: 100vh;
+    background-color: aliceblue;
+
+/* You can layer background images IFF at least 1 of the images has a transparent background. */
+/*     background-image: url("/pages/styling_images/img/soap_bubbles_PNG110008.png"), linear-gradient(to left, rgb(23, 94, 148), rgb(242, 243, 248));
+    background-repeat: repeat-y, no-repeat;
+    background-position: right center;
+    background-size: 18%, auto;
+     */
+}
+
+.container {
+    background-color: #42d152;
+    background-image: url('/pages/styling_images/img/pat2.jpeg');
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: cover;
+}
+
+.example {
+    margin-top: 1rem;
+    padding-left: 20px;
+    border: 1px solid red;
+}
+
+.example img {
+    width: 25%;
+    height: auto;
+}
+
+.profile-pic-figure {
+    width: 35%;
+}
+
+.profile-pic-figure img {
+    width: 100%;
+    height: auto;
+    min-width: 100px;
+    border: 5px double #8b42d1;
+
+/* In order to change the shape of an image to a perfect circle, the image must be square to start.
+    In this case, an oval shape will be created since the image is rectangular. */
+    border-radius: 50%;
+}
+
+.hero {
+    border-bottom: 2px solid palegoldenrod;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+    background-color: hsla(219, 39%, 40%, 0.178);
+}
+
+
+.h1 {
+    font-size: 500%;
+    color: aliceblue;
+
+ /* The third value in 'text-shadow' is how much of a blur you want to give your shadow. */   
+    text-shadow: 2px 2px 5px black;
+    padding: 0.25rem;
+    border-radius: 10px;   
+}
+
+/* This creates lettering using a background image */
+.clip {
+    font-weight: 800;
+    font-size: 12rem;
+    text-align: center;
+    background-image: url("../img/pat2.jpeg");
+    background-size: 100%;
+    text-transform: uppercase;
+
+/* To make this work with (most) browsers, you will need to use both these properties. */
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: rgba(0, 0, 0, 0.438);
 }

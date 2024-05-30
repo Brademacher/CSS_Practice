@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Raleway", sans-serif;
+    min-height: 100vh;
+
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-auto-rows: 75px auto 75px;
+    grid-template-areas: 
+        "hd hd hd hd hd hd hd hd hd"
+        "mn mn mn mn mn mn mn sb sb"
+        "ft ft ft ft ft ft ft ft ft";
+    gap: 1rem;
+}
+
+.el {
+    background-color: rebeccapurple;
+    color: whitesmoke;
+
+    display: grid;
+    place-content: center;
+}
+
+.header {
+    grid-area: hd;
+}
+
+.sidebar {
+    grid-area: sb;
+    background-color: peru;
+}
+
+.footer {
+    grid-area: ft;
+}
+
+.container {
+    grid-area: mn;
+    min-height: 400px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr 2fr);
+    grid-auto-rows: minmax(150px, auto);
+    gap: 1rem 2rem;
+}
+
+.box {
+    background-color: rgb(28, 30, 34);
+    color: white;
+    font-size: 2rem;
+    padding: 0.5rem;
+}
+
+.box:first-child {
+    background-color: aqua;
+
+/* You can assign elements within a grid (in this case,
+    the 'container' class holds the grid for it's children.
+    Those are the 'box' objects. */
+    
+/* The 'grid-column/row-start' and 'grid-column/row-end' properties
+    determine the gutter (lines separating objects on the grid) an
+    object will start and end at. Column 1 is the very furthest left
+    edge of the grid. Row 1 is the top edge of the grid. */
+/*     grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3; */
+
+/* The shorthand syntax for the above start and end properties is here. */
+    grid-column: 1 / 4;
+    grid-row: 1 / 3;
+
+/* Objects in a grid can *also* be grids themselves. Here, we are making
+    the first 'box' grid object a grid, then manipulating the content inside
+    the grid. */
+    display: grid;
+/*     align-content: end;
+    justify-content: center; */
+    place-content: end center;
+}
+
+.box:nth-child(2) {
+    background-color: lavender;
+    grid-column: 1 / 5;
+    grid-row: 3 / 4;
+}

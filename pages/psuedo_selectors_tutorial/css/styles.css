@@ -53,12 +53,17 @@ nav {
     justify-content: space-evenly;
 }
 
-nav a, nav a:visited {
+nav a:any-link {
     color: #1e293b;
 }
 
-nav a:hover, nav a:focus {
+
+nav :is(a:hover, a:focus) {
     color: hsla(0, 0%, 20%, 0.6);       
+}
+
+nav a:active {
+    color: red;
 }
 
 main {
@@ -88,6 +93,12 @@ footer {
     align-items: center;
 }
 
+/* The '.<class_name>.target' pseudo class identifies the 
+    last element selected "targeted" */
+.card:target {
+    border: 2px solid rebeccapurple
+}
+
 .card figure {
     display: flex;
     flex-flow: column nowrap;
@@ -98,11 +109,70 @@ footer {
     border-radius: 50%;
 }
 
+/* The '.<class_name> <element_tag>[<attribute_name>]' pseudo class will
+    select any <element_tag> with the '<attribute_name>' attribute.  */
+/* .card img[alt] {
+    border: 10px solid rgba(4, 70, 4, 0.61);
+} */
+
+/* The '.<class_name>:nth-child(#)' pseudo class will select the '#' element
+    inside of the <class_name> class. */
+.card:nth-child(2) {
+    background-color: papayawhip;
+}
+
+/* The '.<class_name> <element_tag>:not([<attribute_name>])' pseudo 
+    class will look for <element_tag>'s without the '<attribute_name>' 
+    attribute. */
+.card img:not([alt]) {
+    border: 10px solid rgba(105, 4, 4, 0.822);
+}
+
 .card figcaption {
     font-weight: bolder;
     font-size: 2rem;
     margin: 1rem;
     text-align: center;
+}
+
+/* The '.<class_name> <element_tag>::after' pseudo ELEMENT tag will
+    add/transform a unselectable (pseudo) element to the page directly
+    after the '.<class_name> <element_tag>' element. */
+.card figcaption::after {
+    content: '🎆';
+    display: block;
+}
+
+
+/*  This can also been with 'before'*/
+/* .card figcaption::before {
+    content: '🎆';
+    display: block;
+} */
+
+.card figcaption::first-letter {
+    font-size: 3rem;
+}
+
+/* Reminder that in order for elements to have 'position: absolute', it's
+    parent must have 'position: relative' */
+.card p {
+    position: relative;
+}
+
+.card p::before {
+    content: open-quote;
+    font-size: 3em;
+    position: absolute;
+    top: -0.25em;
+    left: -0.5em;
+}
+.card p::after {
+    content: close-quote;
+    font-size: 3em;
+    position: absolute;
+    top: -0.25em;
+    right: -0.5em;
 }
 
 /*     Syntax for Media Queries:
@@ -131,10 +201,10 @@ footer {
 
 /* || MEDIUM */
 @media screen and (min-width: 768px) {
-    nav {
+/*     nav {
         display: none;
     }
-
+ */
     .card {
         width: min(100%, 325px);
     }
@@ -171,10 +241,10 @@ footer {
     h1 {
         font-size: 1.5rem;
     }
-
+/* 
     nav {
         display: none;
-    }
+    } */
 
     main {
         flex-flow: row nowrap;
